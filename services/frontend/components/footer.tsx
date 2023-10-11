@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 export const Footer = () => {
 	return (
@@ -12,8 +12,8 @@ export const Footer = () => {
 					<strong>℗ Underbuff Project, 2023</strong> <br />
 					Dota, Dota Underlords and Steam are registered trademarks of
 					Valve Corporation. <br />
-					{/*<a
-						href="https://discord.gg/u9qJxzQ"
+					<a
+						href="https://discord.gg/egeYMn5a4G"
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{ color: "white" }}
@@ -24,7 +24,7 @@ export const Footer = () => {
 							height="2em"
 							size="2x"
 						/>
-					</a>{" "}*/}
+					</a>{" "}
 					<a
 						href="https://github.com/underbuff/Fortify"
 						target="_blank"
