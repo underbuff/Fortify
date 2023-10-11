@@ -4,12 +4,12 @@ import { injectable } from "inversify";
 
 @injectable()
 export class CreditsCommand implements TwitchCommand {
-	invocations = ["!credit", "!fortify"];
+	invocations = ["!credit", "!underbuff"];
 
 	handler = async (client: Client, channel: string) => {
 		client.say(
 			channel,
-			"Check out https://fortify.gg & https://github.com/underbuff/Fortify",
+			"Check out https://underbuff.gg & https://github.com/underbuff/Fortify",
 		);
 	};
 }
