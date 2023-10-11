@@ -143,7 +143,7 @@ export const Navbar = () => {
 									<a
 										className="navbar-item"
 										target="_blank"
-										href="https://discord.gg/M2rD7fD"
+										href="https://discord.gg/egeYMn5a4G"
 									>
 										Need help?
 									</a>
