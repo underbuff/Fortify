@@ -42,7 +42,7 @@ export class SecretsManager<
 			}
 
 			for (const path in this.requestedSecrets) {
-				const fields = this.requestedSecrets[path];
+				const fields: any = this.requestedSecrets[path];
 
 				const secret = await this.vault.read("/" + path);
 
@@ -55,7 +55,7 @@ export class SecretsManager<
 						);
 					}
 
-					this.secrets[path][field] = secret.data.data[
+					this.secrets[path as any][field] = secret.data.data[
 						field
 					] as typeof fields[typeof field];
 				}

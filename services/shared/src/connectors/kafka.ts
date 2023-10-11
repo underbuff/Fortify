@@ -164,7 +164,7 @@ export class KafkaConnector implements HealthCheckable, Connector {
 	}
 
 	public consumer(config?: ConsumerConfig) {
-		const consumer = this.kafka.consumer(config);
+		const consumer = this.kafka.consumer(config!);
 
 		this.consumers.push(consumer);
 

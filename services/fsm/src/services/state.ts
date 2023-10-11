@@ -2,7 +2,7 @@ import { injectable, inject } from "inversify";
 
 import { MatchState, UserCache, UserCacheKey } from "@shared/state";
 import { RedisConnector } from "@shared/connectors/redis";
-import { captureException } from "@sentry/node";
+//import { captureException } from "@sentry/node";
 import { Logger } from "@shared/logger";
 
 @injectable()
@@ -78,15 +78,15 @@ export class StateService {
 
 				return matchState;
 			} catch (e) {
-				const exceptionID = captureException(e);
+				//const exceptionID = captureException(e);
 				this.logger.error(
 					"An exception occurred while getting a match",
 					{
 						e,
-						exceptionID,
+						//exceptionID,
 					},
 				);
-				this.logger.error(e, { exceptionID });
+				//this.logger.error(e, { exceptionID });
 			}
 		}
 

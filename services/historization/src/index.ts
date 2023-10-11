@@ -5,8 +5,6 @@ import { sharedSetup } from "@shared/index";
 global.__rootdir__ = __dirname || process.cwd();
 sharedSetup();
 
-import { captureException, flush } from "@sentry/node";
-
 import { container } from "./inversify.config";
 
 import { KafkaConnector } from "@shared/connectors/kafka";
@@ -166,7 +164,7 @@ const {
 					resolveOffset(message.offset);
 					await commitOffsetsIfNecessary();
 				} catch (e) {
-					const exceptionID = captureException(e, {
+					/*const exceptionID = captureException(e, {
 						contexts: {
 							kafka: {
 								topic,
@@ -176,12 +174,12 @@ const {
 								value: message.value?.toString(),
 							},
 						},
-					});
+					});*/
 					logger.error("Consumer run failed", {
 						e,
-						exceptionID,
+						//exceptionID,
 					});
-					logger.error(e, { exceptionID });
+					//logger.error(e, { exceptionID });
 
 					// In case something doesn't work for a given topic (e.g. time series db down and historization fails)
 					// pause the consumption of said topic for 30 seconds
@@ -220,17 +218,17 @@ const {
 		// debug("app::kafka::consumer.connect")(sentryID);
 	});
 	consumer.on("consumer.crash", async (crashEvent: ConsumerCrashEvent) => {
-		const exceptionID = captureException(crashEvent.payload.error, {
+		/*const exceptionID = captureException(crashEvent.payload.error, {
 			extra: {
 				groupId: crashEvent.payload.groupId,
 			},
-		});
+		});*/
 		logger.error("Kafka consumer crashed", {
 			crashEvent,
-			exceptionID,
+			//exceptionID,
 		});
 		try {
-			await flush();
+			//await flush();
 		} finally {
 			// eslint-disable-next-line no-process-exit
 			process.exit(-1);
@@ -241,7 +239,7 @@ const {
 	process.on("SIGINT", shutDown);
 
 	async function shutDown() {
-		await flush(10000).catch(() => {});
+		//await flush(10000).catch(() => {});
 
 		setTimeout(() => {
 			logger.warn(
@@ -268,14 +266,14 @@ const {
 })().catch(async (e) => {
 	const logger = container.get(Logger);
 
-	const exceptionID = captureException(e);
+	//const exceptionID = captureException(e);
 
 	logger.error("An exception occurred in the main context", {
 		e,
-		exceptionID,
+		//exceptionID,
 	});
 
-	logger.error(e, { exceptionID });
+	//logger.error(e, { exceptionID });
 
-	await flush();
+	//await flush();
 });

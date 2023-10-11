@@ -31,14 +31,12 @@
     "fix": "gts fix",
     "pretest": "npm run compile",
     "posttest": "npm run check",
-    "sentry": "cross-env SENTRY_PROJECT=$npm_package_name sentry-cli releases new $npm_package_version && cross-env SENTRY_PROJECT=$npm_package_name sentry-cli releases files $npm_package_version upload-sourcemaps --rewrite ./build && cross-env SENTRY_PROJECT=$npm_package_name sentry-cli releases finalize $npm_package_version",
     "start": "cross-env TS_NODE_PROJECT=./ NODE_OPTIONS=--trace-warnings node -r tsconfig-paths/register build/index.js",
     "start:ts": "cross-env DEBUG=app::* NODE_OPTIONS=--trace-warnings ts-node -r tsconfig-paths/register --files src/index.ts",
     "sync-dotenv": "sync-dotenv",
     "dev": "DEBUG=app:* nodemon"
   },
   "devDependencies": {
-    "@sentry/cli": "^1.63.0",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/node": "^14.14.31",
     "@types/node-fetch": "^2.5.8",
@@ -51,7 +49,6 @@
   },
   "dependencies": {
     "@influxdata/influxdb-client": "^1.10.0",
-    "@sentry/node": "^6.2.0",
     "bignumber.js": "^9.0.1",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
