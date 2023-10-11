@@ -1,8 +1,8 @@
 export const GSIFileTemplate = (
 	key: string
-) => `"Fortify Gamestate Integration Script"
+) => `"Underbuff Gamestate Integration Script"
 {
-  "uri" "https://gsi.fortify.gg/gsi"
+  "uri" "https://gsi.underlords.neonic.dev/gsi"
   "timeout"  "5.0"
   "buffer"  "1"
   "throttle"  "1"

@@ -6,9 +6,9 @@
   "license": "AGPL-3.0-or-later",
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 8030",
     "compile": "graphql-let && tsc -b && cross-env NODE_ENV=production next build",
-    "start": "next start",
+    "start": "next start -p 8030",
     "sync-dotenv": "sync-dotenv",
     "types": "npm run download-schema && graphql-let",
     "graphql-let": "graphql-let",

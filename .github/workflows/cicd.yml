@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Login to GHCR
-        run: echo ${{ secrets.CICD_ACTION_TOKEN }} | docker login ghcr.io -u ThomasK33 --password-stdin
+        run: echo ${{ secrets.CICD_ACTION_TOKEN }} | docker login ghcr.io -u doroxz --password-stdin
       - name: Set frontend build envs
         run: echo -n ${{ secrets.FRONTEND_BUILD_DOTENV }} | base64 -d > services/frontend/.env
       - name: Set Container Build Versions
@@ -48,35 +48,3 @@ jobs:
           docker-compose -f build.docker-compose.yml down
       - name: Push images to GHCR
         run: docker-compose -f build.docker-compose.yml push
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-20.04
-    defaults:
-      run:
-        working-directory: devops/kubernetes
-
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: "14"
-      - uses: azure/setup-kubectl@v1
-        with:
-          version: "v1.20.0"
-
-      - run: echo DOMAIN=fortify.gg >> $GITHUB_ENV
-      - run: mkdir -p ~/.kube/ && touch ~/.kube/config && echo ${{ secrets.KUBECONFIG }} | base64 --decode > ~/.kube/config
-      - run: touch .env && echo ${{ secrets.K8S_DOTENV }} | base64 --decode > .env
-      - run: npm ci
-      # - run: npm run record
-      # - run: npm run build
-      - run: npm run synth
-      - run: kubectl apply -f dist/fortify.k8s.yaml
-      - run: kubectl get deployment --output name -n fortify | xargs -n1 -t kubectl rollout status -n fortify --timeout=300s
-      - uses: sarisia/actions-status-discord@v1
-        if: always()
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
