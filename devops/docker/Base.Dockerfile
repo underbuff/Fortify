@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:14-alpine
 LABEL org.opencontainers.image.source https://github.com/underbuff/fortify
 
 # ENV NODE_ENV production
