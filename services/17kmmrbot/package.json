@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Fortify-Labs/Fortify.git"
+    "url": "git+ssh://git@github.com/underbuff/Fortify.git"
   },
   "author": "Thomas Kosiewski",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/Fortify-Labs/Fortify/issues"
+    "url": "https://github.com/underbuff/Fortify/issues"
   },
-  "homepage": "https://github.com/Fortify-Labs/Fortify#readme",
+  "homepage": "https://github.com/underbuff/Fortify#readme",
   "devDependencies": {
     "@sentry/cli": "^1.63.1",
     "@types/node": "^14.14.32",

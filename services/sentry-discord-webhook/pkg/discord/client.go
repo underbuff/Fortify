@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/Fortify-Labs/Fortify/services/sentry-discord-webhook/internal/vault"
-	"github.com/Fortify-Labs/Fortify/services/sentry-discord-webhook/pkg/sentry"
+	"github.com/underbuff/Fortify/services/sentry-discord-webhook/internal/vault"
+	"github.com/underbuff/Fortify/services/sentry-discord-webhook/pkg/sentry"
 	"go.uber.org/zap"
 )
 

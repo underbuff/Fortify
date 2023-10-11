@@ -14,10 +14,10 @@
   "license": "AGPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fortify-Labs/Fortify.git"
+    "url": "git+https://github.com/underbuff/Fortify.git"
   },
   "bugs": {
-    "url": "https://github.com/Fortify-Labs/Fortify/issues"
+    "url": "https://github.com/underbuff/Fortify/issues"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

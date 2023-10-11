@@ -1,7 +1,7 @@
 ARG BASE_VERSION=invalidVersion
 
-FROM ghcr.io/fortify-labs/fortify/base:$BASE_VERSION AS builder
-LABEL org.opencontainers.image.source https://github.com/fortify-labs/fortify
+FROM ghcr.io/underbuff/fortify/base:$BASE_VERSION AS builder
+LABEL org.opencontainers.image.source https://github.com/underbuff/fortify
 
 ARG SERVICE_NAME
 
@@ -21,8 +21,8 @@ RUN npm ci --silent &&\
 	rm -rf src tests
 
 # Multi stage build to reduce image size
-FROM ghcr.io/fortify-labs/fortify/base:$BASE_VERSION
-LABEL org.opencontainers.image.source https://github.com/fortify-labs/fortify
+FROM ghcr.io/underbuff/fortify/base:$BASE_VERSION
+LABEL org.opencontainers.image.source https://github.com/underbuff/fortify
 
 ARG SERVICE_NAME
 

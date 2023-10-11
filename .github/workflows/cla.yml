@@ -19,7 +19,7 @@ jobs:
           PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         with:
           path-to-signatures: "signatures/version1/cla.json"
-          path-to-cla-document: "https://github.com/Fortify-Labs/Fortify/blob/master/CLA.md"
+          path-to-cla-document: "https://github.com/underbuff/Fortify/blob/master/CLA.md"
           # branch should not be protected
           branch: "develop"
           allowlist: ThomasK33,dependabot*

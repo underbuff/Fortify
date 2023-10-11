@@ -1,4 +1,4 @@
-module github.com/Fortify-Labs/Fortify/services/sentry-discord-webhook
+module github.com/underbuff/Fortify/services/sentry-discord-webhook
 
 go 1.15
 

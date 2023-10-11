@@ -5,7 +5,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 
-	"github.com/Fortify-Labs/Fortify/services/sentry-discord-webhook/internal/vault"
+	"github.com/underbuff/Fortify/services/sentry-discord-webhook/internal/vault"
 	"go.uber.org/zap"
 )
 

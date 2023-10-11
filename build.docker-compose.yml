@@ -2,13 +2,13 @@ version: "3.7"
 
 services:
   base:
-    image: ghcr.io/fortify-labs/fortify/base:${BASE_VERSION:-invalidVersion}
+    image: ghcr.io/underbuff/fortify/base:${BASE_VERSION:-invalidVersion}
     build:
       context: ./
       dockerfile: ./devops/docker/Base.Dockerfile
 
   backend:
-    image: ghcr.io/fortify-labs/fortify/backend:${BACKEND_VERSION:-invalidVersion}
+    image: ghcr.io/underbuff/fortify/backend:${BACKEND_VERSION:-invalidVersion}
     build:
       context: ./
       dockerfile: ./devops/docker/NodeExposed.Dockerfile
@@ -22,7 +22,7 @@ services:
         SENTRY_ORG: ${SENTRY_ORG:-invalidOrg}
 
   frontend:
-    image: ghcr.io/fortify-labs/fortify/frontend:${FRONTEND_VERSION:-invalidVersion}
+    image: ghcr.io/underbuff/fortify/frontend:${FRONTEND_VERSION:-invalidVersion}
     build:
       context: ./
       dockerfile: ./services/frontend/Dockerfile
@@ -33,7 +33,7 @@ services:
         EXPOSED_PORT: 3000
 
   fsm:
-    image: ghcr.io/fortify-labs/fortify/fsm:${FSM_VERSION:-invalidVersion}
+    image: ghcr.io/underbuff/fortify/fsm:${FSM_VERSION:-invalidVersion}
     build:
       context: ./
       dockerfile: ./devops/docker/Node.Dockerfile
@@ -46,7 +46,7 @@ services:
         SENTRY_ORG: ${SENTRY_ORG:-invalidOrg}
 
   gsi-receiver:
-    image: ghcr.io/fortify-labs/fortify/gsi-receiver:${GSI_RECEIVER_VERSION:-invalidVersion}
+    image: ghcr.io/underbuff/fortify/gsi-receiver:${GSI_RECEIVER_VERSION:-invalidVersion}
     build:
       context: ./
       dockerfile: ./devops/docker/NodeExposed.Dockerfile
@@ -60,7 +60,7 @@ services:
         SENTRY_ORG: ${SENTRY_ORG:-invalidOrg}
 
   17kmmrbot:
-    image: ghcr.io/fortify-labs/fortify/17kmmrbot:${TWITCHBOT_VERSION:-invalidVersion}
+    image: ghcr.io/underbuff/fortify/17kmmrbot:${TWITCHBOT_VERSION:-invalidVersion}
     build:
       context: ./
       dockerfile: ./devops/docker/Node.Dockerfile
@@ -73,7 +73,7 @@ services:
         SENTRY_ORG: ${SENTRY_ORG:-invalidOrg}
 
   jobs:
-    image: ghcr.io/fortify-labs/fortify/jobs:${JOBS_VERSION:-invalidVersion}
+    image: ghcr.io/underbuff/fortify/jobs:${JOBS_VERSION:-invalidVersion}
     build:
       context: ./
       dockerfile: ./devops/docker/Node.Dockerfile
@@ -86,7 +86,7 @@ services:
         SENTRY_ORG: ${SENTRY_ORG:-invalidOrg}
 
   historization:
-    image: ghcr.io/fortify-labs/fortify/historization:${HISTORIZATION_VERSION:-invalidVersion}
+    image: ghcr.io/underbuff/fortify/historization:${HISTORIZATION_VERSION:-invalidVersion}
     build:
       context: ./
       dockerfile: ./devops/docker/Node.Dockerfile
@@ -100,7 +100,7 @@ services:
 
   # --- Tools ---
   sentry-discord-webhook:
-    image: ghcr.io/fortify-labs/fortify/sentry-discord-webhook:${SENTRY_DISCORD_WEBHOOK_VERSION:-invalidVersion}
+    image: ghcr.io/underbuff/fortify/sentry-discord-webhook:${SENTRY_DISCORD_WEBHOOK_VERSION:-invalidVersion}
     build:
       context: ./services/sentry-discord-webhook/
       dockerfile: Dockerfile

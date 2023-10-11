@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/Fortify-Labs/Fortify/services/sentry-discord-webhook/internal/vault"
-	"github.com/Fortify-Labs/Fortify/services/sentry-discord-webhook/pkg/discord"
-	"github.com/Fortify-Labs/Fortify/services/sentry-discord-webhook/pkg/sentry"
+	"github.com/underbuff/Fortify/services/sentry-discord-webhook/internal/vault"
+	"github.com/underbuff/Fortify/services/sentry-discord-webhook/pkg/discord"
+	"github.com/underbuff/Fortify/services/sentry-discord-webhook/pkg/sentry"
 	"github.com/gofiber/fiber/v2"
 	"github.com/heptiolabs/healthcheck"
 	"go.uber.org/zap"
