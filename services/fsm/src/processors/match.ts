@@ -15,7 +15,7 @@ import { LeaderboardService } from "@shared/services/leaderboard";
 import { ExtractorService } from "@shared/services/extractor";
 import { LeaderboardType } from "@shared/definitions/leaderboard";
 import { StateChangeHandler } from "./stateChange";
-import { captureException } from "@sentry/node";
+//import { captureException } from "@sentry/node";
 import { Logger } from "@shared/logger";
 
 const { REQUIRED_UPDATES = "10" } = process.env;
@@ -99,11 +99,11 @@ export class MatchProcessor {
 							timestamp,
 						});
 					} catch (e) {
-						const exceptionID = captureException(e);
+						//const exceptionID = captureException(e);
 						this.logger.error(
 							"An error occurred while handling public player state changes",
 							{
-								exceptionID,
+								//exceptionID,
 								e,
 							},
 						);
@@ -147,11 +147,11 @@ export class MatchProcessor {
 								},
 							);
 						} catch (e) {
-							const exceptionID = captureException(e);
+							//const exceptionID = captureException(e);
 							this.logger.error(
 								"An error occurred while handling private player state changes",
 								{
-									exceptionID,
+									//exceptionID,
 									e,
 								},
 							);

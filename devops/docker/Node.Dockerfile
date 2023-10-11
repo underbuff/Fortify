@@ -5,11 +5,6 @@ LABEL org.opencontainers.image.source https://github.com/underbuff/fortify
 
 ARG SERVICE_NAME
 
-ARG SENTRY_AUTH_TOKEN
-ENV SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN}
-ARG SENTRY_ORG
-ENV SENTRY_ORG=${SENTRY_ORG}
-
 # Copy the files necessary for the serivce
 WORKDIR /usr/src/app/${SERVICE_NAME}
 COPY services/${SERVICE_NAME} .
@@ -17,7 +12,6 @@ COPY services/${SERVICE_NAME} .
 # Compile the service
 RUN npm ci --silent &&\
 	npm run compile &&\
-	npm run sentry &&\
 	rm -rf src tests
 
 # Multi stage build to reduce image size

@@ -17,7 +17,6 @@ import {
 import { PermissionScope } from "@shared/definitions/context";
 import { AuthService } from "@shared/services/auth";
 
-import { captureException, flush } from "@sentry/node";
 import { Secrets } from "./secrets";
 import { HealthCheck } from "@shared/services/healthCheck";
 
@@ -108,20 +107,20 @@ const { KAFKA_TOPIC, MY_PORT } = process.env;
 					end({ status: 401 });
 				}
 			} catch (e) {
-				const exceptionID = captureException(e, {
+				/*const exceptionID = captureException(e, {
 					extra: {
 						jwtPayload: (
 							(req.body.auth as string | undefined) ?? ""
 						).split(".")[1],
 					},
-				});
+				});*/
 				logger.error("GSI message processing failed", {
 					e,
-					exceptionID,
+					//exceptionID,
 				});
 				res.status(500)
 					.contentType("text/html")
-					.end(`SERVER ERROR (${exceptionID})`);
+					.end(`SERVER ERROR (${e})`);
 
 				end({ status: 500 });
 			}
@@ -152,7 +151,7 @@ const { KAFKA_TOPIC, MY_PORT } = process.env;
 	process.on("SIGINT", shutDown);
 
 	async function shutDown() {
-		await flush(10000).catch(() => {});
+		//await flush(10000).catch(() => {});
 
 		try {
 			server.close(async () => {
@@ -177,12 +176,12 @@ const { KAFKA_TOPIC, MY_PORT } = process.env;
 })().catch((e) => {
 	const logger = container.get(Logger);
 
-	const exceptionID = captureException(e);
+	/*const exceptionID = captureException(e);
 
 	logger.error(e, { exceptionID });
 
 	flush(10000)
 		.catch(() => {})
 		// eslint-disable-next-line no-process-exit
-		.finally(() => process.exit(-1));
+		.finally(() => process.exit(-1));*/
 });

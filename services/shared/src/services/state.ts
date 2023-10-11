@@ -86,7 +86,7 @@ export class StateService {
 						exceptionID,
 					},
 				);
-				this.logger.error(e, { exceptionID });
+				this.logger.error(e as any, { exceptionID });
 			}
 		}
 

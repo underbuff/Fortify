@@ -259,7 +259,7 @@ export class MatchService {
 			await matchRepo?.save(match);
 		} catch (e) {
 			this.logger.error("Store match start event failed", { e, event });
-			this.logger.error(e, { event });
+			this.logger.error(e as string, { event });
 
 			throw e;
 		}

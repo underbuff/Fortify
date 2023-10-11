@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY services/shared shared
 
 # Install latest npm version
-RUN npm install -g npm@latest
+RUN npm install -g npm@6
 
 # Install all dependencies for the shared library and compile it
 WORKDIR /usr/src/app/shared

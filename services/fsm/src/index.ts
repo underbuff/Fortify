@@ -5,7 +5,7 @@ import { sharedSetup } from "@shared/index";
 global.__rootdir__ = __dirname || process.cwd();
 sharedSetup();
 
-import { captureException, flush } from "@sentry/node";
+//import { captureException, flush } from "@sentry/node";
 
 import { container } from "./inversify.config";
 
@@ -403,7 +403,7 @@ const {
 					await commitOffsetsIfNecessary();
 				} catch (e) {
 					end({ status: 500 });
-					const exceptionID = captureException(e, {
+					/*const exceptionID = captureException(e, {
 						contexts: {
 							kafka: {
 								topic,
@@ -411,10 +411,10 @@ const {
 								message: JSON.stringify(message, null, 2),
 							},
 						},
-					});
+					});*/
 					logger.error("Consumer run failed", {
 						e,
-						exceptionID,
+						//exceptionID,
 						contexts: {
 							kafka: {
 								topic,
@@ -423,9 +423,9 @@ const {
 							},
 						},
 					});
-					logger.error(e, {
+					/*logger.error(e, {
 						exceptionID,
-					});
+					});*/
 					clearInterval(intervalId);
 					throw e;
 				}
@@ -456,18 +456,18 @@ const {
 		// debug("app::kafka::consumer.connect")(sentryID);
 	});
 	consumer.on("consumer.crash", async (crashEvent: ConsumerCrashEvent) => {
-		const exceptionID = captureException(crashEvent.payload.error, {
+		/*const exceptionID = captureException(crashEvent.payload.error, {
 			extra: {
 				groupId: crashEvent.payload.groupId,
 			},
-		});
+		});*/
 		logger.error("Kafka consumer crashed", {
 			crashEvent,
-			exceptionID,
+			//exceptionID,
 		});
 
 		try {
-			await flush(10000);
+			//await flush(10000);
 		} finally {
 			// eslint-disable-next-line no-process-exit
 			process.exit(-1);
@@ -480,7 +480,7 @@ const {
 	process.on("SIGINT", shutDown);
 
 	async function shutDown() {
-		await flush(10000).catch(() => {});
+		//await flush(10000).catch(() => {});
 
 		setTimeout(() => {
 			logger.warn(
@@ -504,14 +504,14 @@ const {
 })().catch((e) => {
 	const logger = container.get(Logger);
 
-	const exceptionID = captureException(e);
+	//const exceptionID = captureException(e);
 
-	logger.error(e, {
+	/*logger.error(e, {
 		exceptionID,
 	});
 
 	flush(10000)
 		.catch(() => {})
 		// eslint-disable-next-line no-process-exit
-		.finally(() => process.exit(-1));
+		.finally(() => process.exit(-1));*/
 });
