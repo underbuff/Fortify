@@ -6,12 +6,12 @@ const Imprint = () => {
 	return (
 		<>
 			<NextSeo
-				title="Imprint | Fortify"
-				description="Imprint Fortify"
+				title="Imprint | Underbuff"
+				description="Imprint Underbuff"
 				openGraph={{
 					url: `${process.env.NEXT_PUBLIC_URL}/imprint`,
-					title: "Imprint | Fortify",
-					description: "Imprint Fortify",
+					title: "Imprint | Underbuff",
+					description: "Imprint Underbuff",
 				}}
 			/>
 

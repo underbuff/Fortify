@@ -40,12 +40,8 @@ export const Navbar = () => {
 			>
 				<div className="navbar-brand">
 					<Link href="/" passHref={true}>
-						<a className="navbar-item">
-							<Image
-								src="/images/Fortify_WIP.png"
-								width="100"
-								height="45"
-							/>
+						<a className="navbar-item site-name">
+							<span>U</span>nderbuff.gg
 						</a>
 					</Link>
 

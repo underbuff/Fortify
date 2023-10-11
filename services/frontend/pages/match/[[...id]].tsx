@@ -25,10 +25,10 @@ const Match = () => {
 		return (
 			<>
 				<NextSeo
-					title="Missing Match ID | Fortify"
+					title="Missing Match ID | Underbuff"
 					openGraph={{
 						url: `${process.env.NEXT_PUBLIC_URL}/match`,
-						title: "Missing Match ID | Fortify",
+						title: "Missing Match ID | Underbuff",
 					}}
 				/>
 
@@ -81,10 +81,10 @@ const Match = () => {
 	return (
 		<>
 			<NextSeo
-				title="Match | Fortify"
+				title="Match | Underbuff"
 				openGraph={{
 					url: `${process.env.NEXT_PUBLIC_URL}/match/${id}`,
-					title: "Match | Fortify",
+					title: "Match | Underbuff",
 				}}
 			/>
 

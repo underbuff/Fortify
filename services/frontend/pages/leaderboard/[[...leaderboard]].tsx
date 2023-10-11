@@ -28,11 +28,11 @@ const LeaderboardPage = () => {
 	return (
 		<>
 			<NextSeo
-				title={`${leaderboard} Leaderboard | Fortify`}
+				title={`${leaderboard} Leaderboard | Underbuff`}
 				description={`${leaderboard} Leaderboard for Dota Underlords`}
 				openGraph={{
 					url: `${process.env.NEXT_PUBLIC_URL}/leaderboard/${leaderboard}`,
-					title: `${leaderboard} Leaderboard | Fortify`,
+					title: `${leaderboard} Leaderboard | Underbuff`,
 					description: `${leaderboard} Leaderboard for Dota Underlords`,
 				}}
 			/>

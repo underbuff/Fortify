@@ -21,11 +21,11 @@ const Matches = () => {
 	return (
 		<>
 			<NextSeo
-				title="Matches | Fortify"
+				title="Matches | Underbuff"
 				description="Currently ongoing Dota Underlords matches"
 				openGraph={{
 					url: `${process.env.NEXT_PUBLIC_URL}/matches`,
-					title: "Matches | Fortify",
+					title: "Matches | Underbuff",
 					description: "Currently ongoing Dota Underlords matches",
 				}}
 			/>

@@ -9,6 +9,18 @@ $footer-padding: 2rem 1.5rem 1.5rem;
 
 // --- Gauge styles ---
 
+.site-name {
+	font-size: 18px !important;
+
+	& > span {
+		color: #1abc9c;
+	}
+
+	&:hover {
+		color: white !important;
+	}
+}
+
 .gauge-container {
 	width: 100px;
 	height: 100px;

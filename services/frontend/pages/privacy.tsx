@@ -6,12 +6,12 @@ const Privacy = () => {
 	return (
 		<>
 			<NextSeo
-				title="Privacy Policy | Fortify"
-				description="Fortify's Privacy Policy"
+				title="Privacy Policy | Underbuff"
+				description="Underbuff's Privacy Policy"
 				openGraph={{
 					url: `${process.env.NEXT_PUBLIC_URL}/privacy`,
-					title: "Privacy Policy | Fortify",
-					description: "Fortify's Privacy Policy",
+					title: "Privacy Policy | Underbuff",
+					description: "Underbuff's Privacy Policy",
 				}}
 			/>
 			<Navbar />
@@ -24,7 +24,7 @@ const Privacy = () => {
 					how you can receive a copy of your information or delete
 					them if you wish.
 				</p>{" "}
-				<h2 className="title is-2">Information Fortify Collects</h2>
+				<h2 className="title is-2">Information Underbuff (Fortify) Collects</h2>
 				<p>
 					By placing the GSI file provided by us in the appropriate
 					directory, you consent to us collecting all lobby and match
