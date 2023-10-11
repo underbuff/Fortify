@@ -51,11 +51,11 @@ const Index = () => {
 	return (
 		<>
 			<NextSeo
-				title="Fortify"
+				title="Underbuff"
 				description="Open Source Dota Underlords Data Platform"
 				openGraph={{
 					url: `${process.env.NEXT_PUBLIC_URL}`,
-					title: "Fortify",
+					title: "Underbuff",
 					description: "Open Source Dota Underlords Data Platform",
 				}}
 			/>
@@ -83,11 +83,11 @@ const Index = () => {
 					style={{ margin: "1rem" }}
 				>
 					<div className="column is-6" style={{ height: "100%" }}>
-						<h1 className="title">Fortify</h1>
+						<h1 className="title">Underbuff</h1>
 						<h1 className="subtitle is-5">
 							Open Source Dota Underlords Data Platform
 						</h1>
-						{/* 
+						{/*
 							Potentially some kind of blog or news here
 						*/}
 					</div>

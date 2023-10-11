@@ -30,12 +30,12 @@ export const GSIModal: FunctionComponent<{
 				</header>
 				<section className="modal-card-body">
 					<div className="content">
-						Follow these steps to set up Fortify on your computer -
+						Follow these steps to set up Underbuff (Fortify) on your computer -
 						<ul>
 							<li>
 								Download - Download the file by clicking the
 								button below
-								(gamestate_integration_fortify.cfg). This is a
+								(gamestate_integration_underbuff.cfg). This is a
 								configuration file generated for your account in
 								specific
 							</li>
@@ -74,7 +74,7 @@ export const GSIModal: FunctionComponent<{
 									</li>
 									<li>
 										Copy the file you downloaded
-										(gamestate_integration_fortify.cfg) and
+										(gamestate_integration_underbuff.cfg) and
 										place it inside this new folder you have
 										created
 									</li>
@@ -120,7 +120,7 @@ export const GSIModal: FunctionComponent<{
 							}
 
 							download(
-								"gamestate_integration_fortify.cfg",
+								"gamestate_integration_underbuff.cfg",
 								GSIFileTemplate(data.generateGsiJwt)
 							);
 						}}

@@ -9,9 +9,10 @@ export const Footer = () => {
 			<div className="content is-pulled-left">
 				<p>
 					<strong>℗ Fortify Project, 2021</strong> <br />
+					<strong>℗ Underbuff Project, 2023</strong> <br />
 					Dota, Dota Underlords and Steam are registered trademarks of
 					Valve Corporation. <br />
-					<a
+					{/*<a
 						href="https://discord.gg/u9qJxzQ"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -23,7 +24,7 @@ export const Footer = () => {
 							height="2em"
 							size="2x"
 						/>
-					</a>{" "}
+					</a>{" "}*/}
 					<a
 						href="https://github.com/underbuff/Fortify"
 						target="_blank"
@@ -44,10 +45,6 @@ export const Footer = () => {
 				</p>
 			</div>
 			<div className="content is-pulled-right">
-				<a href="https://status.fortify.gg" target="_blank">
-					Status
-				</a>{" "}
-				|{" "}
 				<Link href="/privacy" passHref>
 					<a>Privacy Policy</a>
 				</Link>{" "}

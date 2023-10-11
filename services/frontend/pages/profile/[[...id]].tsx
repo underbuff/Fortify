@@ -68,11 +68,11 @@ const Profile: NextPage<ProfilePageProps> = ({ context }) => {
 	return (
 		<>
 			<NextSeo
-				title={`${profile?.name ?? "Private"} Profile | Fortify`}
+				title={`${profile?.name ?? "Private"} Profile | Underbuff`}
 				description={description}
 				openGraph={{
 					url: `${process.env.NEXT_PUBLIC_URL}/profile/${profile?.steamid}`,
-					title: `${profile?.name ?? "Private"} Profile | Fortify`,
+					title: `${profile?.name ?? "Private"} Profile | Underbuff`,
 					description,
 					images: [
 						{

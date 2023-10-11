@@ -2,7 +2,7 @@ export const GSIFileTemplate = (
 	key: string
 ) => `"Underbuff Gamestate Integration Script"
 {
-  "uri" "https://gsi.underlords.neonic.dev/gsi"
+  "uri" "https://gsi.underbuff.gg/gsi"
   "timeout"  "5.0"
   "buffer"  "1"
   "throttle"  "1"
