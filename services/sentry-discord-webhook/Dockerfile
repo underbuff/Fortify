@@ -12,7 +12,7 @@ RUN make
 
 # --- Execution image ---
 FROM scratch
-LABEL org.opencontainers.image.source https://github.com/fortify-labs/fortify
+LABEL org.opencontainers.image.source https://github.com/underbuff/fortify
 
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=build /src/sentry-discord-webhook/bin/sentry-discord-webhook /sentry-discord-webhook

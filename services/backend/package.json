@@ -29,12 +29,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Fortify-Labs/Fortify.git"
+    "url": "git+https://github.com/underbuff/Fortify.git"
   },
   "author": "Thomas Kosiewski",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/Fortify-Labs/Fortify/issues"
+    "url": "https://github.com/underbuff/Fortify/issues"
   },
   "devDependencies": {
     "@graphql-codegen/add": "^2.0.2",

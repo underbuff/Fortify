@@ -25,7 +25,7 @@ export const Footer = () => {
 						/>
 					</a>{" "}
 					<a
-						href="https://github.com/Fortify-Labs/Fortify"
+						href="https://github.com/underbuff/Fortify"
 						target="_blank"
 						rel="noopener noreferrer"
 						style={{

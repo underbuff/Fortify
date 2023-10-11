@@ -142,7 +142,7 @@ export const Navbar = () => {
 									<a
 										className="navbar-item"
 										target="_blank"
-										href="https://github.com/Fortify-Labs/Fortify/issues"
+										href="https://github.com/underbuff/Fortify/issues"
 									>
 										Report a bug
 									</a>

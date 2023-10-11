@@ -1,7 +1,7 @@
 ARG BASE_VERSION=invalidVersion
 
-FROM ghcr.io/fortify-labs/fortify/base:$BASE_VERSION
-LABEL org.opencontainers.image.source https://github.com/fortify-labs/fortify
+FROM ghcr.io/underbuff/fortify/base:$BASE_VERSION
+LABEL org.opencontainers.image.source https://github.com/underbuff/fortify
 
 ARG SERVICE_NAME
 
@@ -22,7 +22,7 @@ RUN chown -R node:node /usr/src/app
 USER node
 
 # Expose port
-ARG EXPOSED_PORT=8080
+ARG EXPOSED_PORT=8030
 EXPOSE ${EXPOSED_PORT}
 
 CMD npm run start

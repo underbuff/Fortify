@@ -9,7 +9,7 @@ export class CreditsCommand implements TwitchCommand {
 	handler = async (client: Client, channel: string) => {
 		client.say(
 			channel,
-			"Check out https://fortify.gg & https://github.com/Fortify-Labs/Fortify",
+			"Check out https://fortify.gg & https://github.com/underbuff/Fortify",
 		);
 	};
 }
