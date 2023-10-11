@@ -1,7 +1,7 @@
 {
   "name": "frontend",
-  "version": "1.6.10",
-  "prodVersion": "1.6.10",
+  "version": "1.6.11",
+  "prodVersion": "1.6.11",
   "author": "Thomas Kosiewski",
   "license": "AGPL-3.0-or-later",
   "private": true,
