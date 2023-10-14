@@ -50,6 +50,7 @@ export class TwitchOnlineScript implements FortifyScript {
 				getStreamStatus(
 					streamer,
 					this.secrets.secrets.twitchOauth.clientID,
+					this.secrets.secrets.twitchBot.oauthToken,
 					summary,
 				),
 			),
@@ -82,21 +83,21 @@ export class TwitchOnlineScript implements FortifyScript {
 const getStreamStatus = (
 	user: User,
 	clientID: string,
+	token: string,
 	summary: Summary<string>,
 ) => {
 	const end = summary.startTimer();
 
-	return fetch(`https://api.twitch.tv/kraken/streams/${user.twitchId}`, {
+	return fetch(`https://api.twitch.tv/helix/streams?user_id=${user.twitchId}`, {
 		method: "GET",
 		headers: {
-			Accept: "application/vnd.twitchtv.v5+json",
-			"Client-ID": clientID,
+			'Client-ID': clientID,
+			'Authorization': `Bearer ${token}`
 		},
 	})
-		.then((res) => res.json() as Promise<TwitchStreamsResponse>)
+		.then((res) =>res.json() as Promise<TwitchStreamsResponse>)
 		.then((res) => {
 			end();
-
 			return { user, res };
 		});
 };
