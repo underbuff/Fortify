@@ -60,9 +60,11 @@ export class TwitchOnlineScript implements FortifyScript {
 			if (status.status === "fulfilled") {
 				const { user, res } = status.value;
 
+				const obj = res.data.find(x => x.user_id === user.twitchId)
+
 				if (
-					res.stream &&
-					res.stream.game.toLowerCase() === "dota underlords"
+					obj &&
+					obj.game_name.toLowerCase() === "dota underlords"
 				) {
 					user.twitchLive = true;
 				} else {
