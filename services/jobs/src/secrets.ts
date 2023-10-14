@@ -8,6 +8,9 @@ const requestedSecrets = {
 	twitchOauth: {
 		clientID: "",
 	},
+	twitchBot: {
+		oauthToken: "",
+	},
 };
 
 @injectable()
